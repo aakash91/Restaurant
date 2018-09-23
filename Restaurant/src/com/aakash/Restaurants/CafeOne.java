@@ -1,11 +1,14 @@
 package com.aakash.Restaurants;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.aakash.IRestaurants.IEmployee;
 import com.aakash.IRestaurants.IRestaurant;
 import com.aakash.Menu.Item;
 import com.aakash.MenuHelper.Menu;
+import com.aakash.Order.Order;
+
 
 public class CafeOne implements IRestaurant{
 	public String Name;
@@ -47,13 +50,19 @@ public class CafeOne implements IRestaurant{
 		return employees.get(id);
 	}
 	@Override
-	public void getMenu() {
-		// TODO Auto-generated method stub
-		this.menu.printMenu();
+	public HashMap<String,Item> getMenu() {
+		return this.menu.printMenu();
 	}
 	@Override
 	public void setMenu(Menu m) {
 		// TODO Auto-generated method stub
 		this.menu=m;
 	}
+	@Override
+	public void receiveOrder(Order o, String custName, String custNumber, String custAdress) {
+		// TODO Auto-generated method stub
+		System.out.println("Received order from"+custName);
+		
+	}
+
 }

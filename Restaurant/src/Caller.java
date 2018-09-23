@@ -1,3 +1,4 @@
+import com.aakash.Customer.Customer;
 import com.aakash.Employees.Chef;
 import com.aakash.Employees.Waiter;
 import com.aakash.IRestaurants.IEmployee;
@@ -31,16 +32,24 @@ public class Caller {
 		cone.addEmployee(c1);
 		System.out.println(cone.getEmployeeById(1).getSalary());
 		
-		Item i1=new Item("cold", "vanialla", 100, 10);
+		Item i1=new Item("cold", "vanilla", 100, 10);
 		Item i2=new Item("hot", "corella", 200, 10);
 		
 		Menu m1=new Menu();
-		m1.AddToMenu(i1, 100);
-		m1.AddToMenu(i2, 200);
+		m1.AddToMenu(i1.itemName, i1);
+		m1.AddToMenu(i2.itemName, i2);
 		
 		cone.setMenu(m1);
 		
 		cone.getMenu();
+		
+		Customer cc1=new Customer("Aakash", "1234", "164 Acorn Pl");
+		cc1.setRestaurant(cone);
+		
+		cc1.addToOrder("corella", 1);
+		cc1.addToOrder("vanilla", 2);
+		
+		cc1.placeOrder();
 	}
 
 }

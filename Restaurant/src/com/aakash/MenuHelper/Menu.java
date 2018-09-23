@@ -8,15 +8,18 @@ import com.aakash.Menu.Item;
 
 public class Menu {
 	
-	public HashMap<Item,Object> items=new HashMap<Item,Object>();
+	//public HashMap<Item,Object> items=new HashMap<Item,Object>();
+	public HashMap<String,Item> items=new HashMap<String,Item>();
 	
-	public void AddToMenu(Item item, long value) {
-		items.put(item, value);
+	public void AddToMenu(String itemName, Item item) {
+		items.put(itemName, item);
 	}
 	
-	public void printMenu() {
-		items.forEach((key,value) -> System.out.println(key.itemName + " = " + value));
+	public HashMap<String,Item> printMenu() {
+		return items;
 		
 	}
+	
+	
 	
 }
